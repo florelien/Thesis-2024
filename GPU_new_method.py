@@ -45,7 +45,7 @@ data["Complex_input_ids"] = data["Complex_input_ids"].progress_apply(lambda x: t
 data["Complex_attention_masks"] = data["Complex_attention_masks"].progress_apply(lambda x: torch.tensor(x, dtype=torch.int))
 """
 
-train_data, val_data = train_test_split(data, test_size=0.05, random_state=42)
+train_data, val_data = train_test_split(data, test_size=0.2, random_state=42)
 class CustomDataset(torch.utils.data.Dataset):
     """Dataset class that allows easy requests of a data row."""
     def __init__(self, df):
